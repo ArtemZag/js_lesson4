@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8">
+  <title>Films service</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+  <div id="page-container"></div>
+  <script id="page-film-list-template" type="text/template">
+    <div id="films-container"></div>
+    <div id="add-film-button-container"></div>
+  </script>
+  <script id="page-film-details-template" type="text/template">
+    <div id="film-details-container"></div>
+  </script>
+  <script id="add-film-button-template" type="text/template">
+    <input id="add-film-button" type="button" value="Add film">
+  </script>
+  <script id="film-template" type="text/template" style="border-width: 1px"><span class="film-id"><%= id %></span><a href="#FilmDetails/<%=id%>"><span class="film-name"><%= name %></span></a><span class="film-year"><%= year %></span>
+    <input type="button" value="Delete film" class="film-delete-button">
+    <input type="button" value="Edit film" class="film-edit-button">
+  </script>
+  <script id="film-template-edit" type="text/template"><span class="film-id"><%= id %></span>
+    <input type="text" value="<%= name %>" class="film-name-input">
+    <input type="text" value="<%= year %>" class="film-year-input">
+    <input type="button" value="Save" class="film-editapprove-button">
+    <input type="button" value="Cancel" class="film-editcancel-button">
+  </script>
+  <script id="film-details-template" type="text/template"><a href="#">All films</a>
+    <div><img src="<%= poster %>"></div>
+    <div><span class="film-details-label">Name:</span><span class="film-details-valuelabel"><%= name %></span></div>
+    <div><span class="film-details-label">Year:</span><span class="film-details-valuelabel"><%= year %></span></div>
+    <div><span class="film-details-label">Details1:</span><span class="film-details-valuelabel"><%= details1 %></span></div>
+    <div><span class="film-details-label">Details2:</span><span class="film-details-valuelabel"><%= details2 %></span></div>
+    <div><span class="film-details-label">Details3:</span><span class="film-details-valuelabel"><%= details3 %></span></div>
+    <div><span class="film-details-label">Details4:</span><span class="film-details-valuelabel"><%= details4 %></span></div>
+    <div><span class="film-details-label">Details5:</span><span class="film-details-valuelabel"><%= details5 %></span></div>
+    <div><span class="film-details-label">Details6:</span><span class="film-details-valuelabel"><%= details6 %></span></div>
+    <div><span class="film-details-label">Details7:</span><span class="film-details-valuelabel"><%= details7 %></span></div>
+    <div><span class="film-details-label">Details8:</span><span class="film-details-valuelabel"><%= details8 %></span></div>
+  </script>
+  <script type="text/javascript" src="../../bower_components/requirejs/require.js" data-main="javascripts/build/index"></script>
+</body>

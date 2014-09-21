@@ -1,0 +1,70 @@
+doctype html
+html(lang='en')
+head
+	meta(charset='UTF-8')
+	title Films service
+	link(rel="stylesheet",  href="./styles/style.css")
+body
+	#page-container
+	
+	script#page-film-list-template(type='text/template')
+		#films-container
+		#add-film-button-container
+
+	script#page-film-details-template(type='text/template')
+		#film-details-container
+
+	script#add-film-button-template(type='text/template')
+		input#add-film-button(type="button", value="Add film")
+
+	script#film-template(type="text/template", style='border-width: 1px')
+		span.film-id <%= id %>
+		a(href!="#FilmDetails/<%=id%>")
+			span.film-name <%= name %>
+		span.film-year <%= year %>
+		input.film-delete-button(type="button", value='Delete film')
+		input.film-edit-button(type="button", value='Edit film')
+
+	script#film-template-edit(type='text/template')
+		span.film-id <%= id %>
+		input.film-name-input(type='text', value!='<%= name %>')
+		input.film-year-input(type="text", value!='<%= year %>')
+		input.film-editapprove-button(type='button', value='Save')
+		input.film-editcancel-button(type='button' value='Cancel')
+
+	script#film-details-template(type='text/template')
+		a(href='#') All films
+		div
+			img(src!='<%= poster %>')
+		div
+			span(class='film-details-label') Name:
+			span(class='film-details-valuelabel') <%= name %>
+		div
+			span(class='film-details-label') Year:
+			span(class='film-details-valuelabel') <%= year %>
+		div
+			span(class='film-details-label') Details1:
+			span(class='film-details-valuelabel') <%= details1 %>
+		div
+			span(class='film-details-label') Details2:
+			span(class='film-details-valuelabel') <%= details2 %>
+		div
+			span(class='film-details-label') Details3:
+			span(class='film-details-valuelabel') <%= details3 %>
+		div
+			span(class='film-details-label') Details4:
+			span(class='film-details-valuelabel') <%= details4 %>
+		div
+			span(class='film-details-label') Details5:
+			span(class='film-details-valuelabel') <%= details5 %>
+		div
+			span(class='film-details-label') Details6:
+			span(class='film-details-valuelabel') <%= details6 %>
+		div
+			span(class='film-details-label') Details7:
+			span(class='film-details-valuelabel') <%= details7 %>
+		div
+			span(class='film-details-label') Details8:
+			span(class='film-details-valuelabel') <%= details8 %>
+
+	script(type="text/javascript", src="../../bower_components/requirejs/require.js", data-main='javascripts/build/index')
